@@ -1,0 +1,10 @@
+{
+  "name": "discussion-board-workshop-backend",
+  "version": "0.0.0",
+  "description": "Backend app for Istanbul fullstack javascript workshop",
+  "main": "index.js",
+  "repository": "git@github.com:maherapp/discussion-board-workshop-backend.git",
+  "author": "@maher.app",
+  "license": "MIT",
+  "private": false
+}
