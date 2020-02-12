@@ -1,8 +1,11 @@
 const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
 const BodyParser = require('body-parser');
+const cors = require('cors')
 
 const app = express();
+app.use(cors());
+app.use(express.static('frontend'));
 app.use(BodyParser.json());
 
 let db = null;
@@ -17,7 +20,7 @@ MongoClient.connect('mongodb://localhost:27017', function (err, client) {
 app.post('/users/signup', function (req, res) {
   let users = db.collection('users');
   users.insertOne(req.body, function(err, result) {
-    res.end();
+    res.json({});
   });
 });
 
@@ -31,7 +34,7 @@ app.post('/users/signin', function (req, res) {
 app.post('/posts', function (req, res) {
   let posts = db.collection('posts');
   posts.insertOne(req.body, function(err, result) {
-    res.end();
+    res.json({});
   });
 });
 
